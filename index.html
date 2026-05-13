@@ -169,5 +169,10 @@ const reveal=document.querySelectorAll('section,.card,.skill');
 const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0px)'}})},{threshold:.1});
 reveal.forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='all .8s ease';observer.observe(el)});
 </script>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "325563ed0efb47b181803d1ec1e67bba"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
 </body>
 </html>
