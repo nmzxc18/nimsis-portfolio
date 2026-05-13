@@ -269,6 +269,12 @@
       border-top: 1px solid rgba(255,255,255,0.06);
     }
 
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
     @media(max-width: 768px) {
       .nav-links {
         display: none;
@@ -301,7 +307,13 @@
 
   <section class="hero">
     <div>
-      <div class="badge">SOC Analyst • Cybersecurity • IT Support</div>
+      <div class="badge">SOC Analyst • Cybersecurity • IT Support • Open Worldwide</div>
+
+      <div style="margin-bottom:18px;font-family:monospace;color:#60a5fa;font-size:14px;opacity:0.9;">
+        > initializing_security_profile.exe<br>
+        > scanning global opportunities...<br>
+        > status: AVAILABLE FOR INTERNATIONAL & REMOTE ROLES
+      </div>
 
       <h1>
         Nimsis <br>
@@ -322,6 +334,10 @@
         </a>
       </div>
     </div>
+
+    <div style="position:absolute;left:8%;top:18%;font-size:32px;opacity:0.15;animation:float 6s ease-in-out infinite;">🛡️</div>
+    <div style="position:absolute;right:10%;top:28%;font-size:28px;opacity:0.12;animation:float 7s ease-in-out infinite;">💻</div>
+    <div style="position:absolute;left:18%;bottom:18%;font-size:26px;opacity:0.12;animation:float 8s ease-in-out infinite;">🔐</div>
 
     <div class="hero-image">
       <img src="formal.png" alt="Nimsis Evangelista">
@@ -428,6 +444,29 @@
           LinkedIn Profile
         </a>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Professional Highlights</h2>
+
+    <div class="skills-grid">
+      <div class="skill">2+ Years in IT & Cybersecurity Environments</div>
+      <div class="skill">Experienced in Security Monitoring & Threat Investigation</div>
+      <div class="skill">Hands-on Enterprise IT Support Experience</div>
+      <div class="skill">Open to International & Remote Opportunities</div>
+      <div class="skill">Strong Technical Troubleshooting Background</div>
+      <div class="skill">Cybersecurity-Focused Career Path</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Career Objective</h2>
+
+    <div class="card">
+      <p class="about-text">
+        My goal is to continuously grow within cybersecurity and IT operations by contributing to organizations that value security, innovation, and reliable infrastructure support. I aim to strengthen my expertise in threat detection, SOC operations, cloud technologies, and enterprise support while collaborating with global teams and international environments.
+      </p>
     </div>
   </section>
 
