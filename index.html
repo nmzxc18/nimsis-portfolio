@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nimsis Evangelista | Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #050816;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top, rgba(37,99,235,0.25), transparent 35%),
+        radial-gradient(circle at bottom, rgba(59,130,246,0.12), transparent 35%);
+      z-index: -1;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(0,0,0,0.45);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 999;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #60a5fa;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 60px;
+      align-items: center;
+      padding: 80px 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(59,130,246,0.15);
+      border: 1px solid rgba(96,165,250,0.35);
+      color: #93c5fd;
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 8vw, 88px);
+      line-height: 1;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      color: #60a5fa;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #2563eb, #3b82f6);
+      color: white;
+      box-shadow: 0 0 25px rgba(59,130,246,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(59,130,246,0.6);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: #60a5fa;
+      color: #60a5fa;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      background: rgba(59,130,246,0.25);
+      filter: blur(80px);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 20px;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 50px;
+      font-weight: 800;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 40px;
+      backdrop-filter: blur(12px);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(96,165,250,0.4);
+    }
+
+    .about-text {
+      color: #cbd5e1;
+      line-height: 1.9;
+      font-size: 18px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .skill:hover {
+      background: rgba(59,130,246,0.12);
+      border-color: rgba(96,165,250,0.4);
+      transform: translateY(-4px);
+    }
+
+    .experience {
+      display: grid;
+      gap: 30px;
+    }
+
+    .job-title {
+      font-size: 28px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .job-date {
+      color: #60a5fa;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 18px;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: linear-gradient(to right, rgba(37,99,235,0.15), rgba(59,130,246,0.08));
+      border: 1px solid rgba(96,165,250,0.2);
+    }
+
+    .contact-box p {
+      color: #cbd5e1;
+      margin: 20px auto 35px;
+      line-height: 1.8;
+      max-width: 750px;
+    }
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      color: #64748b;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    @media(max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Nimsis Evangelista</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="badge">SOC Analyst • Cybersecurity • IT Support</div>
+
+      <h1>
+        Nimsis <br>
+        <span>Evangelista</span>
+      </h1>
+
+      <p>
+        Cybersecurity-focused IT professional with experience in SOC monitoring, threat analysis, incident response, enterprise IT support, and infrastructure troubleshooting. Passionate about protecting systems, investigating threats, and delivering efficient technical solutions.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="Nimsis_Evangelista_SOC_Analyst_CV.pdf" download>
+          Download Resume
+        </a>
+
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/nimsis-evangelista-90aa85227/" target="_blank">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="formal.png" alt="Nimsis Evangelista">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card">
+      <p class="about-text">
+        Computer Engineering graduate with professional experience in Security Operations Center (SOC) monitoring, threat detection, incident response, and enterprise IT support. Experienced in analyzing security alerts, investigating suspicious activities, supporting secure IT environments, and troubleshooting technical issues. Open to opportunities in cybersecurity, SOC analysis, and IT infrastructure support roles within the Philippines and Europe.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill">Security Operations Center (SOC)</div>
+      <div class="skill">Threat Detection & Analysis</div>
+      <div class="skill">Incident Response</div>
+      <div class="skill">Security Monitoring</div>
+      <div class="skill">SIEM Fundamentals</div>
+      <div class="skill">Log Analysis</div>
+      <div class="skill">Cyber Threat Investigation</div>
+      <div class="skill">Microsoft Azure Fundamentals</div>
+      <div class="skill">Networking & Troubleshooting</div>
+      <div class="skill">IT Infrastructure Support</div>
+      <div class="skill">Access Management</div>
+      <div class="skill">Technical Documentation</div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="experience">
+      <div class="card">
+        <div class="job-title">IT Specialist — INSPECTA</div>
+        <div class="job-date">June 2024 – Present</div>
+
+        <ul>
+          <li>Provide end-user IT support and maintain stable IT operations.</li>
+          <li>Troubleshoot hardware, software, and network issues.</li>
+          <li>Support system configuration and access management.</li>
+          <li>Assist in incident documentation and operational support.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="job-title">Research & Development Engineer / SOC Analyst — Red Rock IT Security</div>
+        <div class="job-date">October 2022 – May 2024</div>
+
+        <ul>
+          <li>Monitored security alerts and investigated potential cyber threats.</li>
+          <li>Performed security log analysis and threat investigation.</li>
+          <li>Supported incident response and security monitoring processes.</li>
+          <li>Documented security incidents and recommended preventive measures.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Education & Certifications</h2>
+
+    <div class="experience">
+      <div class="card">
+        <div class="job-title">Education</div>
+        <p class="about-text">
+          Bachelor of Science in Computer Engineering — Batangas State University (2022)
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="job-title">Certifications & Training</div>
+
+        <ul>
+          <li>Introduction to Cybersecurity and Operations</li>
+          <li>Introduction to Microsoft Azure</li>
+          <li>Introduction to Machine Learning using WEKA</li>
+          <li>Getting Started with Data Science</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card contact-box">
+      <h2 class="section-title">Let’s Connect</h2>
+
+      <p>
+        Open to opportunities in Cybersecurity, SOC Analysis, Threat Intelligence, and IT Support roles in the Philippines, Luxembourg, and across Europe.
+      </p>
+
+      <div class="buttons" style="justify-content:center;">
+        <a class="btn btn-primary" href="mailto:evangelistanimsis@gmail.com">
+          evangelistanimsis@gmail.com
+        </a>
+
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/nimsis-evangelista-90aa85227/" target="_blank">
+          LinkedIn Profile
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Nimsis Evangelista — Cybersecurity & IT Support Portfolio
+  </footer>
+
+</body>
+</html>
